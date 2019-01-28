@@ -1,0 +1,2 @@
+[07-Dec-2018 11:43:13 America/Chicago] PHP Fatal error:  Class 'WP_Widget' not found in /home/lugar308/public_html/cariru.movfit.com.br/wp-includes/widgets/class-wp-widget-recent-comments.php on line 17
+[07-Dec-2018 11:43:14 America/Chicago] PHP Fatal error:  Class 'WP_Widget' not found in /home/lugar308/public_html/cariru.movfit.com.br/wp-includes/widgets/class-wp-widget-links.php on line 17

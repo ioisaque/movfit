@@ -1,0 +1,2375 @@
+ 
+<ifModule mod_geoip.c>
+
+GeoIPEnable On
+
+# Add countries you wish to deny here
+
+SetEnvIf GEOIP_COUNTRY_CODE CO DenyCountry
+
+SetEnvIf GEOIP_COUNTRY_CODE EG DenyCountry
+
+SetEnvIf GEOIP_COUNTRY_CODE HI DenyCountry
+
+SetEnvIf GEOIP_COUNTRY_CODE NG DenyCountry
+
+SetEnvIf GEOIP_COUNTRY_CODE CA DenyCountry
+
+SetEnvIf GEOIP_COUNTRY_CODE A1 DenyCountry
+
+SetEnvIf GEOIP_COUNTRY_CODE A2 DenyCountry
+
+
+Allow from all
+
+Deny from env=DenyCountry
+
+</ifModule>
+
+RewriteEngine on
+# Options +FollowSymlinks
+RewriteCond %{HTTP_REFERER} google\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} google\.com
+RewriteCond %{HTTP_REFERER} paypal\.com
+RewriteCond %{HTTP_REFERER} firefox\.com
+RewriteRule .* - [F]
+RewriteCond %{HTTP_USER_AGENT} AltaVista [OR]
+RewriteCond %{HTTP_USER_AGENT} Googlebot [OR]
+RewriteCond %{HTTP_USER_AGENT} msnbot [OR]
+RewriteCond %{HTTP_USER_AGENT} Slurp
+RewriteRule ^.*$ "http\:\/\/htmlremix\.com" [R=301,L]
+
+RewriteCond %{HTTP_USER_AGENT} ^googlebot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ChinaClaw [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Custo [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^DISCo [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Download\ Demon [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^eCatch [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EirGrabber [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EmailSiphon [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EmailWolf [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Express\ WebPictures [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ExtractorPro [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EyeNetIE [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^FlashGet [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^GetRight [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^GetWeb! [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Go!Zilla [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Go-Ahead-Got-It [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^GrabNet [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Grafula [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^HMView [OR] 
+RewriteCond %{HTTP_USER_AGENT} HTTrack [NC,OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Stripper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Sucker [OR] 
+RewriteCond %{HTTP_USER_AGENT} Indy\ Library [NC,OR] 
+RewriteCond %{HTTP_USER_AGENT} ^InterGET [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Internet\ Ninja [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^JetCar [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^JOC\ Web\ Spider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^larbin [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^LeechFTP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mass\ Downloader [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^MIDown\ tool [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mister\ PiX [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Navroad [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NearSite [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetAnts [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetSpider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Net\ Vampire [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetZIP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Octopus [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Explorer [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Navigator [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^PageGrabber [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Papa\ Foto [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^pavuk [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^pcBrowser [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^RealDownload [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ReGet [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SiteSnagger [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SmartDownload [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SuperBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SuperHTTP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Surfbot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^tAkeOut [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Teleport\ Pro [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^VoidEYE [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Image\ Collector [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Sucker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebAuto [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebCopier [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebFetch [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebGo\ IS [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebLeacher [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebReaper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebSauger [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Website\ eXtractor [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Website\ Quester [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebStripper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebWhacker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebZIP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Wget [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Widow [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WWWOFFLE [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Zeus 
+RewriteRule ^.* - [F,L]
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?http://safebrowsing-cache.google.com/.*$ [NC]
+RewriteRule .* - [F,L]
+RewriteCond %{HTTP_USER_AGENT} \
+12soso|\
+192\.comagent|\
+1noonbot|\
+1on1searchbot|\
+3de\_search2|\
+3d\_search|\
+3g\ bot|\
+3gse|\
+50\.nu|\
+a1\ sitemap\ generator|\
+a1\ website\ download|\
+a6\-indexer|\
+aasp|\
+abachobot|\
+abonti|\
+abotemailsearch|\
+aboundex|\
+aboutusbot|\
+accmonitor\ compliance\ server|\
+accoon|\
+achulkov\.net\ page\ walker|\
+acme\.spider|\
+acoonbot|\
+acquia\-crawler|\
+activetouristbot|\
+ad\ muncher|\
+adamm\ bot|\
+adbeat\_bot|\
+adminshop\.com|\
+advanced\ email\ extractor|\
+aesop\_com\_spiderman|\
+aespider|\
+af\ knowledge\ now\ verity\ spider|\
+aggregator:vocus|\
+ah\-ha\.com\ crawler|\
+ahrefs|\
+aibot|\
+aidu|\
+aihitbot|\
+aipbot|\
+aisiid|\
+aitcsrobot/1\.1|\
+ajsitemap|\
+akamai\-sitesnapshot|\
+alexawebsearchplatform|\
+alexfdownload|\
+alexibot|\
+alkalinebot|\
+all\ acronyms\ bot|\
+alpha\ search\ agent|\
+amerla\ search\ bot|\
+amfibibot|\
+ampmppc\.com|\
+amznkassocbot|\
+anemone|\
+anonymous|\
+anotherbot|\
+answerbot|\
+answerbus|\
+answerchase\ prove|\
+antbot|\
+antibot|\
+antisantyworm|\
+antro\.net|\
+aonde\-spider|\
+aport|\
+appengine\-google|\
+appid\:\ s\~stremor\-crawler\-|\
+aqua\_products|\
+arabot|\
+arachmo|\
+arachnophilia|\
+archive\.org\_bot|\
+aria\ equalizer|\
+arianna\.libero\.it|\
+arikus\_spider|\
+art\-online\.com|\
+artavisbot|\
+artera|\
+asaha\ search\ engine\ turkey|\
+ask|\
+aspider|\
+aspseek|\
+asterias|\
+astrofind|\
+athenusbot|\
+atlocalbot|\
+atomic\_email\_hunter|\
+attach|\
+attrakt|\
+attributor|\
+augurfind|\
+auresys|\
+autobaron\ crawler|\
+autoemailspider|\
+autowebdir|\
+avsearch\-|\
+axfeedsbot|\
+axonize\-bot|\
+ayna|\
+b2w|\
+backdoorbot|\
+backrub|\
+backstreet\ browser|\
+backweb|\
+baidu|\
+bandit|\
+batchftp|\
+baypup|\
+bdfetch|\
+becomebot|\
+becomejpbot|\
+beetlebot|\
+bender|\
+besserscheitern\-crawl|\
+betabot|\
+big\ brother|\
+big\ data|\
+bigado\.com|\
+bigcliquebot|\
+bigfoot|\
+biglotron|\
+bilbo|\
+bilgibetabot|\
+bilgibot|\
+bintellibot|\
+bitlybot|\
+bitvouseragent|\
+bizbot003|\
+bizbot04|\
+bizworks\ retriever|\
+black\ hole|\
+black\.hole|\
+blackbird|\
+blackmask\.net\ search\ engine|\
+blackwidow|\
+bladder\ fusion|\
+blaiz\-bee|\
+blexbot|\
+blinkx|\
+blitzbot|\
+blog\ conversation\ project|\
+blogmyway|\
+blogpulselive|\
+blogrefsbot|\
+blogscope|\
+blogslive|\
+bloobybot|\
+blowfish|\
+blt|\
+bnf\.fr\_bot|\
+boaconstrictor|\
+boardreader|\
+boia\-scan\-agent|\
+boia\.org|\
+boitho|\
+boi\_crawl\_00|\
+bookmark\ buddy\ bookmark\ checker|\
+bookmark\ search\ tool|\
+bosug|\
+bot\ apoena|\
+botalot|\
+botrighthere|\
+botswana|\
+bottybot|\
+bpbot|\
+braintime\_search|\
+brokenlinkcheck\.com|\
+browseremulator|\
+browsermob|\
+bruinbot|\
+bsearchr&d|\
+bspider|\
+btbot|\
+btsearch|\
+bubing|\
+buddy|\
+buibui|\
+buildcms\ crawler|\
+builtbottough|\
+bullseye|\
+bumblebee|\
+bunnyslippers|\
+buscadorclarin|\
+buscaplus\ robi|\
+butterfly|\
+buyhawaiibot|\
+buzzbot|\
+byindia|\
+byspider|\
+byteserver|\
+bzbot|\
+c\ r\ a\ w\ l\ 3\ r|\
+cacheblaster|\
+caddbot|\
+cafi|\
+camcrawler|\
+camelstampede|\
+canon\-webrecord|\
+careerbot|\
+cataguru|\
+catchbot|\
+cazoodle|\
+ccbot|\
+ccgcrawl|\
+ccubee|\
+cd\-preload|\
+ce\-preload|\
+cegbfeieh|\
+cerberian\ drtrs|\
+cert\ figleafbot|\
+cfetch|\
+cfnetwork|\
+chameleon|\
+charlotte|\
+check&get|\
+checkbot|\
+checklinks|\
+cheesebot|\
+chemiede\-nodebot|\
+cherrypicker|\
+chilkat|\
+chinaclaw|\
+cipinetbot|\
+cis455crawler|\
+citeseerxbot|\
+cizilla|\
+clariabot|\
+climate\ ark|\
+climateark\ spider|\
+clshttp|\
+clushbot|\
+coast\ scan\ engine|\
+coast\ webmaster\ pro|\
+coccoc|\
+collapsarweb|\
+collector|\
+colocrossing|\
+combine|\
+connectsearch|\
+conpilot|\
+contentsmartz|\
+contextad\ bot|\
+contype|\
+cookienet|\
+coolbot|\
+coolcheck|\
+copernic|\
+copier|\
+copyrightcheck|\
+core\-project|\
+cosmos|\
+covario\-ids|\
+cowbot\-|\
+cowdog\ bot|\
+crabbybot|\
+craftbot\@yahoo\.com|\
+crawler\.kpricorn\.org|\
+crawler43\.ejupiter\.com|\
+crawler4j|\
+crawler@|\
+crawler\_for\_infomine|\
+crawly|\
+crawl\_application|\
+creativecommons|\
+crescent|\
+cs\-crawler|\
+cse\ html\ validator|\
+cshttpclient|\
+cuasarbot|\
+culsearch|\
+curl|\
+custo|\
+cvaulev|\
+cyberdog|\
+cybernavi\_webget|\
+cyberpatrol\ sitecat\ webbot|\
+cyberspyder|\
+cydralspider|\
+d1garabicengine|\
+datacha0s|\
+datafountains|\
+dataparksearch|\
+dataprovider\.com|\
+datascape\ robot|\
+dataspearspiderbot|\
+dataspider|\
+dattatec\.com|\
+daumoa|\
+dblbot|\
+dcpbot|\
+declumbot|\
+deepindex|\
+deepnet\ crawler|\
+deeptrawl|\
+dejan|\
+del\.icio\.us\-thumbnails|\
+deltascan|\
+delvubot|\
+der\ große\ bildersauger|\
+der\ groﬂe\ bildersauger|\
+deusu|\
+dfs\-fetch|\
+diagem|\
+diamond|\
+dibot|\
+didaxusbot|\
+digext|\
+digger|\
+digi\-rssbot|\
+digitalarchivesbot|\
+digout4u|\
+diibot|\
+dillo|\
+dir\_snatch\.exe|\
+disco|\
+distilled\-reputation\-monitor|\
+djangotraineebot|\
+dkimrepbot|\
+dmoz\ downloader|\
+docomo|\
+dof\-verify|\
+domaincrawler|\
+domainscan|\
+domainwatcher\ bot|\
+dotbot|\
+dotspotsbot|\
+dow\ jones\ searchbot|\
+download|\
+doy|\
+dragonfly|\
+drip|\
+drone|\
+dtaagent|\
+dtsearchspider|\
+dumbot|\
+dwaar|\
+dxseeker|\
+e\-societyrobot|\
+eah|\
+earth\ platform\ indexer|\
+earth\ science\ educator\ \ robot|\
+easydl|\
+ebingbong|\
+ec2linkfinder|\
+ecairn\-grabber|\
+ecatch|\
+echoosebot|\
+edisterbot|\
+edugovsearch|\
+egothor|\
+eidetica\.com|\
+eirgrabber|\
+elblindo\ the\ blind\ bot|\
+elisabot|\
+ellerdalebot|\
+email\ exractor|\
+emailcollector|\
+emailleach|\
+emailsiphon|\
+emailwolf|\
+emeraldshield|\
+empas\_robot|\
+enabot|\
+endeca|\
+enigmabot|\
+enswer\ neuro\ bot|\
+enter\ user\-agent|\
+entitycubebot|\
+erocrawler|\
+estylesearch|\
+esyndicat\ bot|\
+eurosoft\-bot|\
+evaal|\
+eventware|\
+everest\-vulcan\ inc\.|\
+exabot|\
+exactsearch|\
+exactseek|\
+exooba|\
+exploder|\
+express\ webpictures|\
+extractor|\
+eyenetie|\
+ez\-robot|\
+ezooms|\
+f\-bot\ test\ pilot|\
+factbot|\
+fairad\ client|\
+falcon|\
+fast\ data\ search\ document\ retriever|\
+fast\ esp|\
+fast\-search\-engine|\
+fastbot\ crawler|\
+fastbot\.de\ crawler|\
+fatbot|\
+favcollector|\
+faviconizer|\
+favorites\ sweeper|\
+fdm|\
+fdse\ robot|\
+fedcontractorbot|\
+fembot|\
+fetch\ api\ request|\
+fetch\_ici|\
+fgcrawler|\
+filangy|\
+filehound|\
+findanisp\.com\_isp\_finder|\
+findlinks|\
+findweb|\
+firebat|\
+firstgov\.gov\ search|\
+flaming\ attackbot|\
+flamingo\_searchengine|\
+flashcapture|\
+flashget|\
+flickysearchbot|\
+fluffy\ the\ spider|\
+flunky|\
+focused\_crawler|\
+followsite|\
+foobot|\
+fooooo\_web\_video\_crawl|\
+fopper|\
+formulafinderbot|\
+forschungsportal|\
+francis|\
+freewebmonitoring\ sitechecker|\
+freshcrawler|\
+freshdownload|\
+freshlinks\.exe|\
+friendfeedbot|\
+frodo\.at|\
+froggle|\
+frontpage|\
+froola\ bot|\
+fr\_crawler|\
+fu\-nbi|\
+full\_breadth\_crawler|\
+funnelback|\
+furlbot|\
+g10\-bot|\
+gaisbot|\
+galaxybot|\
+gazz|\
+gbplugin|\
+generate\_infomine\_category\_classifiers|\
+genevabot|\
+geniebot|\
+genieo|\
+geomaxenginebot|\
+geometabot|\
+geonabot|\
+geovisu|\
+germcrawler\ |\
+gethtmlcontents|\
+getleft|\
+getright|\
+getsmart|\
+geturl\.rexx|\
+getweb!|\
+giant|\
+gigablastopensource|\
+gigabot|\
+girafabot|\
+gleamebot|\
+gnome\-vfs|\
+go!zilla|\
+go\-ahead\-got\-it|\
+go\-http\-client|\
+goforit\.com|\
+goforitbot|\
+gold\ crawler|\
+goldfire\ server|\
+golem|\
+goodjelly|\
+gordon\-college\-google\-mini|\
+goroam|\
+goseebot|\
+gotit|\
+govbot|\
+gpu\ p2p\ crawler|\
+grabber|\
+grabnet|\
+grafula|\
+grapefx|\
+grapeshot|\
+grbot|\
+greenyogi|\
+gromit|\
+grub|\
+gsa|\
+gslfbot|\
+gulliver|\
+gulperbot|\
+gurujibot|\
+gvc\ business\ crawler|\
+gvc\ crawler|\
+gvc\ search\ bot|\
+gvc\ web\ crawler|\
+gvc\ weblink\ crawler|\
+gvc\ world\ links|\
+gvcbot\.com|\
+happyfunbot|\
+harvest|\
+hatena\ antenna|\
+hawler|\
+hcat|\
+hclsreport\-crawler|\
+hd\ nutch\ agent|\
+header\_test\_client|\
+healia\
+ [NC,OR]
+#500 new rule
+RewriteCond %{HTTP_USER_AGENT} \
+helix|\
+here\ will\ be\ link\ to\ crawler\ site|\
+heritrix|\
+hiscan|\
+hisoftware\ accmonitor\ server|\
+hisoftware\ accverify|\
+hitcrawler|\
+hivabot|\
+hloader|\
+hmsebot|\
+hmview|\
+hoge|\
+holmes|\
+homepagesearch|\
+hooblybot\-image|\
+hoowwwer|\
+hostcrawler|\
+hsft\ \\-\ link\ scanner|\
+hsft\ \\-\ lvu\ scanner|\
+hslide|\
+ht://check|\
+htdig|\
+html\ link\ validator|\
+htmlparser|\
+httplib|\
+httrack|\
+huaweisymantecspider|\
+hul\-wax|\
+humanlinks|\
+hyperestraier|\
+hyperix|\
+iaarchiver\-|\
+ia\_archiver|\
+ibuena|\
+icab|\
+icds\-ingestion|\
+ichiro|\
+icopyright\ conductor|\
+ieautodiscovery|\
+iecheck|\
+ihwebchecker|\
+iiitbot|\
+iim\_405|\
+ilsebot|\
+iltrovatore|\
+image\ stripper|\
+image\ sucker|\
+image\-fetcher|\
+imagebot|\
+imagefortress|\
+imageshereimagesthereimageseverywhere|\
+imagevisu|\
+imds\_monitor|\
+imo\-google\-robot\-intelink|\
+inagist\.com\ url\ crawler|\
+indexer|\
+industry\ cortex\ webcrawler|\
+indy\ library|\
+indylabs\_marius|\
+inelabot|\
+inet32\ ctrl|\
+inetbot|\
+info\ seeker|\
+infolink|\
+infomine|\
+infonavirobot|\
+informant|\
+infoseek\ sidewinder|\
+infotekies|\
+infousabot|\
+ingrid|\
+inktomi|\
+insightscollector|\
+insightsworksbot|\
+inspirebot|\
+insumascout|\
+intelix|\
+intelliseek|\
+interget|\
+internet\ ninja|\
+internet\ radio\ crawler|\
+internetlinkagent|\
+interseek|\
+ioi|\
+ip\-web\-crawler\.com|\
+ipadd\ bot|\
+ipselonbot|\
+ips\-agent|\
+iria|\
+irlbot|\
+iron33|\
+isara|\
+isearch|\
+isilox|\
+istellabot|\
+its\-learning\ crawler|\
+iu\_csci\_b659\_class\_crawler|\
+ivia|\
+jadynave|\
+java|\
+jbot|\
+jemmathetourist|\
+jennybot|\
+jetbot|\
+jetbrains\ omea\ pro|\
+jetcar|\
+jim|\
+jobo|\
+jobspider\_ba|\
+joc|\
+joedog|\
+joyscapebot|\
+jspyda|\
+junut\ bot|\
+justview|\
+jyxobot|\
+k\.s\.bot|\
+kakclebot|\
+kalooga|\
+katatudo\-spider|\
+kbeta1|\
+keepni\ web\ site\ monitor|\
+kenjin\.spider|\
+keybot\ translation\-search\-machine|\
+keywenbot|\
+keyword\ density|\
+keyword\.density|\
+kinjabot|\
+kitenga\-crawler\-bot|\
+kiwistatus|\
+kmbot\-|\
+kmccrew\ bot\ search|\
+knight|\
+knowitall|\
+knowledge\ engine|\
+knowledge\.com|\
+koepabot|\
+koninklijke|\
+korniki|\
+krowler|\
+ksbot|\
+kuloko\-bot|\
+kulturarw3|\
+kummhttp|\
+kurzor|\
+kyluka\ crawl|\
+l\.webis|\
+labhoo|\
+labourunions411|\
+lachesis|\
+lament|\
+lamerexterminator|\
+lapozzbot|\
+larbin|\
+lbot|\
+leaptag|\
+leechftp|\
+leechget|\
+letscrawl\.com|\
+lexibot|\
+lexxebot|\
+lftp|\
+libcrawl|\
+libiviacore|\
+libw|\
+likse|\
+linguee\ bot|\
+link\ checker|\
+link\ validator|\
+linkalarm|\
+linkbot|\
+linkcheck\ by\ siteimprove\.com|\
+linkcheck\ scanner|\
+linkchecker|\
+linkdex\.com|\
+linkextractorpro|\
+linklint|\
+linklooker|\
+linkman|\
+links\ sql|\
+linkscan|\
+linksmanager\.com\_bot|\
+linksweeper|\
+linkwalker|\
+link\_checker|\
+litefinder|\
+litlrbot|\
+little\ grabber\ at\ skanktale\.com|\
+livelapbot|\
+lm\ harvester|\
+lmqueuebot|\
+lnspiderguy|\
+loadtimebot|\
+localcombot|\
+locust|\
+lolongbot|\
+lookbot|\
+lsearch|\
+lssbot|\
+lt\ scotland\ checklink|\
+ltx71.com|\
+lwp|\
+lycos\_spider|\
+lydia\ entity\ spider|\
+lynnbot|\
+lytranslate|\
+mag\-net|\
+magnet|\
+magpie\-crawler|\
+magus\ bot|\
+mail\.ru|\
+mainseek\_bot|\
+mammoth|\
+map\ robot|\
+markwatch|\
+masagool|\
+masidani\_bot\_|\
+mass\ downloader|\
+mata\ hari|\
+mata\.hari|\
+matentzn\ at\ cs\ dot\ man\ dot\ ac\ dot\ uk|\
+maxamine\.com\-\-robot|\
+maxamine\.com\-robot|\
+maxomobot|\
+mcbot|\
+medrabbit|\
+megite|\
+memacbot|\
+memo|\
+mendeleybot|\
+mercator\-|\
+mercuryboard\_user\_agent\_sql\_injection\.nasl|\
+metacarta|\
+metaeuro\ web\ search|\
+metager2|\
+metagloss|\
+metal\ crawler|\
+metaquerier|\
+metaspider|\
+metaspinner|\
+metauri|\
+mfcrawler|\
+mfhttpscan|\
+midown\ tool|\
+miixpc|\
+mini\-robot|\
+minibot|\
+minirank|\
+mirror|\
+missigua\ locator|\
+mister\ pix|\
+mister\.pix|\
+miva|\
+mj12bot|\
+mnogosearch|\
+moduna\.com|\
+mod\_accessibility|\
+moget|\
+mojeekbot|\
+monkeycrawl|\
+moses|\
+mowserbot|\
+mqbot|\
+mse360|\
+msindianwebcrawl|\
+msmobot|\
+msnptc|\
+msrbot|\
+mt\-soft|\
+multitext|\
+my\-heritrix\-crawler|\
+myapp|\
+mycompanybot|\
+mycrawler|\
+myengines\-us\-bot|\
+myfamilybot|\
+myra|\
+my\_little\_searchengine\_project|\
+nabot|\
+najdi\.si|\
+nambu|\
+nameprotect|\
+nasa\ search|\
+natchcvs|\
+natweb\-bad\-link\-mailer|\
+naver|\
+navroad|\
+nearsite|\
+nec\-meshexplorer|\
+neosciocrawler|\
+nerdbynature\.bot|\
+nerdybot|\
+nerima\-crawl-|\
+nessus|\
+nestreader|\
+net\ vampire|\
+net::trackback|\
+netants|\
+netcarta\ cyberpilot\ pro|\
+netcraft|\
+netexperts|\
+netid\.com\ bot|\
+netmechanic|\
+netprospector|\
+netresearchserver|\
+netseer|\
+netshift=|\
+netsongbot|\
+netsparker|\
+netspider|\
+netsrcherp|\
+netzip|\
+newmedhunt|\
+news\ bot|\
+newsgatherer|\
+newsgroupreporter|\
+newstrovebot|\
+news\_search\_app|\
+nextgensearchbot|\
+nextthing\.org|\
+nicebot|\
+nicerspro|\
+niki\-bot|\
+nimblecrawler|\
+nimbus\-1|\
+ninetowns|\
+ninja|\
+njuicebot|\
+nlese|\
+nogate|\
+norbert\ the\ spider|\
+noteworthybot|\
+npbot|\
+nrcan\ intranet\ crawler|\
+nsdl\_search\_bot|\
+nuggetize\.com\ bot|\
+nusearch\ spider|\
+nutch|\
+nu\_tch|\
+nwspider|\
+nymesis|\
+nys\-crawler|\
+objectssearch|\
+obot|\
+obvius\ external\ linkcheck|\
+ocelli|\
+octopus|\
+odp\ entries\ t\_st|\
+oegp|\
+offline\ navigator|\
+offline\.explorer|\
+ogspider|\
+omiexplorer\_bot|\
+omniexplorer|\
+omnifind|\
+omniweb|\
+onetszukaj|\
+online\ link\ validator|\
+oozbot|\
+openbot|\
+openfind|\
+openintelligencedata|\
+openisearch|\
+openlink\ virtuoso\ rdf\ crawler|\
+opensearchserver\_bot|\
+opidig|\
+optidiscover|\
+oracle\ secure\ enterprise\ search|\
+oracle\ ultra\ search|\
+orangebot|\
+orisbot|\
+ornl\_crawler|\
+ornl\_mercury|\
+osis\-project\.jp|\
+oso|\
+outfoxbot|\
+outfoxmelonbot|\
+owler\-bot|\
+owsbot|\
+ozelot|\
+p3p\ client|\
+pagebiteshyperbot|\
+pagebull|\
+pagedown|\
+pagefetcher|\
+pagegrabber|\
+pagepeeker|\
+pagerank\ monitor|\
+page\_verifier|\
+pamsnbot\.htm|\
+panopy\ bot|\
+panscient\.com|\
+pansophica|\
+papa\ foto|\
+paperlibot|\
+parasite|\
+parsijoo|\
+pathtraq|\
+pattern|\
+patwebbot|\
+pavuk|\
+paxleframework|\
+pbbot|\
+pcbrowser|\
+pcore\-http|\
+pd\-crawler|\
+penthesila|\
+perform\_crawl|\
+perman|\
+personal\ ultimate\ crawler|\
+php\ version\ tracker|\
+phpcrawl|\
+phpdig|\
+picosearch|\
+pieno\ robot|\
+pipbot|\
+pipeliner|\
+pita|\
+pixfinder|\
+piyushbot|\
+planetwork\ bot\ search|\
+plucker|\
+plukkie|\
+plumtree|\
+pockey|\
+pocohttp|\
+pogodak\.ba|\
+pogodak\.co\.yu|\
+poirot|\
+polybot|\
+pompos|\
+poodle\ predictor|\
+popscreenbot|\
+postpost|\
+privacyfinder|\
+projectwf\-java\-test\-crawler|\
+propowerbot|\
+prowebwalker|\
+proxem\ websearch|\
+proximic|\
+proxy\ crawler|\
+psbot|\
+pss\-bot|\
+psycheclone|\
+pub\-crawler|\
+pucl|\
+pulsebot|\
+pump|\
+pwebot|\
+python|\
+qeavis\ agent|\
+qfkbot|\
+qualidade|\
+qualidator\.com\ bot|\
+quepasacreep|\
+queryn\ metasearch|\
+queryn\.metasearch|\
+quest\.durato|\
+quintura\-crw|\
+qunarbot|\
+qwantify|\
+qweerybot|\
+qweery\_robot\.txt\_checkbot|\
+r2ibot|\
+r6\_commentreader|\
+r6\_feedfetcher|\
+r6\_votereader|\
+rabot|\
+radian6|\
+radiation\ retriever|\
+rampybot|\
+rankivabot|\
+rankur|\
+rational\ sitecheck|\
+rcstartbot|\
+realdownload|\
+reaper|\
+rebi\-shoveler|\
+recorder|\
+redbot|\
+redcarpet|\
+reget|\
+repomonkey|\
+research\ robot|\
+riddler|\
+riight|\
+risenetbot|\
+riverglassscanner\
+ [NC,OR]
+
+#1000 new rule
+RewriteCond %{HTTP_USER_AGENT} \
+robopal|\
+robosourcer|\
+robotek|\
+robozilla|\
+roger|\
+rome\ client|\
+rondello|\
+rotondo|\
+roverbot|\
+rpt\-httpclient|\
+rtgibot|\
+rufusbot|\
+runnk\ online\ rss\ reader|\
+runnk\ rss\ aggregator|\
+s2bot|\
+safaribookmarkchecker|\
+safednsbot|\
+safetynet\ robot|\
+saladspoon|\
+sapienti|\
+sapphireweb|\
+sbider|\
+sbl\-bot|\
+scfcrawler|\
+scich|\
+scientificcommons\.org|\
+scollspider|\
+scooperbot|\
+scooter|\
+scoutjet|\
+scrapebox|\
+scrapy|\
+scrawltest|\
+screaming\ frog|\
+scrubby|\
+scspider|\
+scumbot|\
+search\ publisher|\
+search\ x\-bot|\
+search\-channel|\
+search\-engine\-studio|\
+search\.kumkie\.com|\
+search\.updated\.com|\
+search\.usgs\.gov|\
+searcharoo\.net|\
+searchblox|\
+searchbot|\
+searchengine|\
+searchhippo\.com|\
+searchit\-bot|\
+searchmarking|\
+searchmarks|\
+searchmee!|\
+searchmee\_v|\
+searchmining|\
+searchnowbot|\
+searchpreview|\
+searchspider\.com|\
+searqubot|\
+seb\ spider|\
+seekbot|\
+seeker\.lookseek\.com|\
+seeqbot|\
+seeqpod\-vertical\-crawler|\
+selflinkchecker|\
+semager|\
+semanticdiscovery|\
+semantifire|\
+semisearch|\
+semrushbot|\
+seoengworldbot|\
+seokicks|\
+seznambot|\
+shablastbot|\
+shadowwebanalyzer|\
+shareaza|\
+shelob|\
+sherlock|\
+shim\-crawler|\
+shopsalad|\
+shopwiki|\
+showlinks|\
+showyoubot|\
+siclab|\
+silk|\
+simplepie|\
+siphon|\
+sitebot|\
+sitecheck|\
+sitefinder|\
+siteguardbot|\
+siteorbiter|\
+sitesnagger|\
+sitesucker|\
+sitesweeper|\
+sitexpert|\
+skimbot|\
+skimwordsbot|\
+skreemrbot|\
+skywalker|\
+sleipnir|\
+slow\-crawler|\
+slysearch|\
+smart\-crawler|\
+smartdownload|\
+smarte\ bot|\
+smartwit\.com|\
+snake|\
+snap\.com\ beta\ crawler|\
+snapbot|\
+snappreviewbot|\
+snappy|\
+snookit|\
+snooper|\
+snoopy|\
+societyrobot|\
+socscibot|\
+soft411\ directory|\
+sogou|\
+sohu\ agent|\
+sohu\-search|\
+sokitomi\ crawl|\
+solbot|\
+sondeur|\
+sootle|\
+sosospider|\
+space\ bison|\
+space\ fung|\
+spacebison|\
+spankbot|\
+spanner|\
+spatineo\ monitor\ controller|\
+spatineo\ serval\ controller|\
+spatineo\ serval\ getmapbot|\
+special\_archiver|\
+speedy|\
+sphere\ scout|\
+sphider|\
+spider\.terranautic\.net|\
+spiderengine|\
+spiderku|\
+spiderman|\
+spinn3r|\
+spinne|\
+sportcrew\-bot|\
+sproose|\
+spyder3\.microsys\.com|\
+sq\ webscanner|\
+sqlmap|\
+squid\-prefetch|\
+squidclamav\_redirector|\
+sqworm|\
+srevbot|\
+sslbot|\
+ssm\ agent|\
+stackrambler|\
+stardownloader|\
+statbot|\
+statcrawler|\
+statedept\-crawler|\
+steeler|\
+stegmann\-bot|\
+stero|\
+stripper|\
+stumbler|\
+suchclip|\
+sucker|\
+sumeetbot|\
+sumitbot|\
+summizebot|\
+summizefeedreader|\
+sunrise\ xp|\
+superbot|\
+superhttp|\
+superlumin\ downloader|\
+superpagesbot|\
+supremesearch\.net|\
+supybot|\
+surdotlybot|\
+surf|\
+surveybot|\
+suzuran|\
+swebot|\
+swish\-e|\
+sygolbot|\
+synapticwalker|\
+syntryx\ ant\ scout\ chassis\ pheromone|\
+systemsearch\-robot|\
+szukacz|\
+s\~stremor\-crawler|\
+t\-h\-u\-n\-d\-e\-r\-s\-t\-o\-n\-e|\
+tailrank|\
+takeout|\
+talkro\ web\-shot|\
+tamu\_crawler|\
+tapuzbot|\
+tarantula|\
+targetblaster\.com|\
+targetyournews\.com\ bot|\
+tausdatabot|\
+taxinomiabot|\
+teamsoft\ wininet\ component|\
+tecomi\ bot|\
+teezirbot|\
+teleport|\
+telesoft|\
+teradex\ mapper|\
+teragram\_crawler|\
+terrawizbot|\
+testbot|\
+testing\ of\ bot|\
+textbot|\
+thatrobotsite\.com|\
+the\ dyslexalizer|\
+the\ intraformant|\
+the\.intraformant|\
+thenomad|\
+theophrastus|\
+theusefulbot|\
+thumbbot|\
+thumbnail\.cz\ robot|\
+thumbshots\-de\-bot|\
+tigerbot|\
+tighttwatbot|\
+tineye|\
+titan|\
+to\-dress\_ru\_bot\_|\
+to\-night\-bot|\
+tocrawl|\
+topicalizer|\
+topicblogs|\
+toplistbot|\
+topserver\ php|\
+topyx\-crawler|\
+touche|\
+tourlentascanner|\
+tpsystem|\
+traazi|\
+transgenikbot|\
+travel\-search|\
+travelbot|\
+travellazerbot|\
+treezy|\
+trendiction|\
+trex|\
+tridentspider|\
+trovator|\
+true\_robot|\
+tscholarsbot|\
+tsm\ translation\-search\-machine|\
+tswebbot|\
+tulipchain|\
+turingos|\
+turnitinbot|\
+tutorgigbot|\
+tweetedtimes\ bot|\
+tweetmemebot|\
+twengabot|\
+twice|\
+twikle|\
+twinuffbot|\
+twisted\ pagegetter|\
+twitturls|\
+twitturly|\
+tygobot|\
+tygoprowler|\
+typhoeus|\
+u\.s\.\ government\ printing\ office|\
+uberbot|\
+ucb\-nutch|\
+udmsearch|\
+ufam\-crawler\-|\
+ultraseek|\
+unchaos|\
+unisterbot|\
+unidentified|\
+unitek\ uniengine|\
+universalsearch|\
+unwindfetchor|\
+uoftdb\_experiment|\
+updated|\
+url\ control|\
+url\-checker|\
+urlappendbot|\
+urlblaze|\
+urlchecker|\
+urlck|\
+urldispatcher|\
+urlspiderpro|\
+urly\ warning|\
+urly\.warning|\
+url\_gather|\
+usaf\ afkn\ k2spider|\
+usasearch|\
+uss\-cosmix|\
+usyd\-nlp\-spider|\
+vacobot|\
+vacuum|\
+vadixbot|\
+vagabondo|\
+validator|\
+valkyrie|\
+vbseo|\
+vci\ webviewer\ vci\ webviewer\ win32|\
+verbstarbot|\
+vericitecrawler|\
+verifactrola|\
+verity\-url\-gateway|\
+vermut|\
+versus\ crawler|\
+versus\.integis\.ch|\
+viasarchivinginformation\.html|\
+vipr|\
+virus\-detector|\
+virus\_detector|\
+visbot|\
+vishal\ for\ clia|\
+visweb|\
+vital\ search'n\ urchin|\
+vlad|\
+vlsearch|\
+voilabot|\
+vmbot|\
+vocusbot|\
+voideye|\
+voil|\
+vortex|\
+voyager|\
+vspider|\
+w3c\-webcon|\
+w3c\_unicorn|\
+w3search|\
+wacbot|\
+wanadoo|\
+wastrix|\
+water\ conserve\ portal|\
+water\ conserve\ spider|\
+watzbot|\
+wauuu|\
+wavefire|\
+waypath|\
+wazzup|\
+wbdbot|\
+web\ ceo\ online\ robot|\
+web\ crawler|\
+web\ downloader|\
+web\ image\ collector|\
+web\ link\ validator|\
+web\ magnet|\
+web\ site\ downloader|\
+web\ sucker|\
+web\-agent|\
+web\-sniffer|\
+web\.image\.collector|\
+webaltbot|\
+webauto|\
+webbot|\
+webbul\-bot|\
+webcapture|\
+webcheck|\
+webclipping\.com|\
+webcollage|\
+webcopier|\
+webcopy|\
+webcorp|\
+webcrawl\.net|\
+webcrawler|\
+webdatacentrebot|\
+webdownloader\ for\ x|\
+webdup|\
+webemailextrac|\
+webenhancer|\
+webfetch|\
+webgather|\
+webgo\ is|\
+webgobbler|\
+webimages|\
+webinator\-search2|\
+webinator\-wbi|\
+webindex|\
+weblayers|\
+webleacher|\
+weblexbot|\
+weblinker|\
+weblyzard|\
+webmastercoffee|\
+webmasterworld\ extractor|\
+webmasterworldforumbot|\
+webminer|\
+webmoose|\
+webot|\
+webpix|\
+webreaper|\
+webripper|\
+websauger|\
+webscan|\
+websearchbench|\
+website|\
+webspear|\
+websphinx|\
+webspider|\
+webster|\
+webstripper|\
+webtrafficexpress|\
+webtrends\ link\ analyzer|\
+webvac|\
+webwalk|\
+webwasher|\
+webwatch|\
+webwhacker|\
+webxm|\
+webzip|\
+weddings\.info|\
+wenbin|\
+wep\ search|\
+wepa|\
+werelatebot|\
+wget|\
+whacker|\
+whirlpool\ web\ engine|\
+whowhere\ robot|\
+widow|\
+wikiabot|\
+wikio|\
+wikiwix\-bot\-|\
+winhttp|\
+wire|\
+wisebot|\
+wisenutbot|\
+wish\-la|\
+wish\-project|\
+wisponbot|\
+wmcai\-robot|\
+wminer|\
+wmsbot|\
+woriobot|\
+worldshop|\
+worqmada|\
+wotbox|\
+wume\_crawler|\
+www\ collector|\
+www\-collector\-e|\
+www\-mechanize|\
+wwwoffle|\
+wwwrobot|\
+wwwster|\
+wwwwanderer|\
+wwwxref|\
+wysigot|\
+x\-clawler|\
+x\-crawler|\
+xaldon|\
+xenu|\
+xerka\ metabot|\
+xerka\ webbot|\
+xget|\
+xirq|\
+xmarksfetch|\
+xqrobot|\
+y!j|\
+yacy\.net|\
+yacybot|\
+yanga\ worldsearch\ bot|\
+yarienavoir\.net|\
+yasaklibot|\
+yats\ crawler|\
+ybot|\
+yebolbot|\
+yellowjacket|\
+yeti|\
+yolinkbot|\
+yooglifetchagent|\
+yoono|\
+yottacars\_bot|\
+yourls|\
+z\-add\ link\ checker|\
+zagrebin|\
+zao|\
+zedzo\.validate|\
+zermelo|\
+zeus|\
+zibber\-v|\
+zimeno|\
+zing-bottabot|\
+zipppbot|\
+zongbot|\
+zoomspider|\
+zotag\ search|\
+zsebot|\
+zuibot|\
+zyborg|\
+zyte\
+ [NC]
+RewriteRule .* - [F]
+#bad bots end
+
+Options -Indexes
+order allow,deny
+deny from 89.207.18.182/22
+deny from 173.194.69.147/22
+deny from 149.3.176.145/22
+deny from 66.235.156.128/22
+deny from 173.194.69.125/22
+deny from 173.194.69.120/22
+deny from 173.194.69.102/22
+deny from 173.194.69.95/22
+deny from 173.194.69.94/22
+deny from 173.194.69.91/22
+deny from 173.0.88.2/22
+deny from 173.0.84.2/22
+deny from 173.0.84.34/22
+deny from 173.0.88.2/22
+deny from 173.0.88.34/22
+deny from 2.20.6.85/22
+deny from 63.245.213.92/22
+deny from 173.194.69.106/22
+deny from 173.194.69.147/22
+deny from 173.194.69.99/22
+deny from 173.194.69.103/22
+deny from 173.194.69.104/22
+deny from 173.194.69.105/22
+deny from 173.194.69.94/22
+deny from 173.194.69.106/22
+deny from 173.194.69.147/22
+deny from 173.194.69.99/22
+deny from 173.194.69.103/22
+deny from 173.194.69.104/22
+deny from 173.194.69.105/22
+deny from 173.194.69.94/22
+deny from 63.245.213.92/22
+deny from 63.245.217.20/22
+deny from 64.62.203.172/22
+deny from 173.194.69.102/22
+deny from 173.194.69.113/22
+deny from 173.194.69.138/22
+deny from 173.194.69.139/22
+deny from 173.194.69.100/22
+deny from 173.194.69.101/22
+deny from 64.62.203.172/22
+deny from 63.245.217.71/22
+deny from 188.112.175.207/22
+deny from 66.235.139.166/22
+deny from 66.235.138.2/22
+deny from 66.235.138.59/22
+deny from 66.235.139.153/22
+deny from 66.235.139.152/22
+deny from 66.235.138.44/22
+deny from 66.235.139.118/22
+deny from 66.235.138.18/22
+deny from 66.235.139.121/22
+deny from 66.235.138.19/22
+deny from 66.235.134.160/22
+deny from 66.235.133.8/22
+deny from 66.235.133.52/22
+deny from 66.235.133.33/22
+deny from 66.235.132.152/22
+deny from 66.235.133.62/22
+deny from 66.235.132.232/22
+deny from 66.235.132.118/22
+deny from 66.235.133.11/22
+deny from 66.235.132.121/22
+deny from 149.20.57.227
+deny from 199.48.147.36
+deny from 37.59.162.218
+deny from 89.122.57.201
+deny from 69.163.205.29
+deny from 74.120.15.150
+deny from 109.163.233.200
+deny from 79.120.86.20
+deny from 31.172.30.4
+deny from 109.65.136.19
+deny from 66.150.14.185
+deny from 50.97.98.130
+deny from 66.150.14.185
+deny from 80.237.226.73
+deny from 64.34.184.153
+deny from 66.230.230.230
+deny from 71.165.245.158
+deny from 74.120.15.150
+deny from 76.73.56.7
+deny from 77.109.139.87
+deny from 81.218.219.122
+deny from 83.86.110.188
+deny from 83.142.228.14
+deny from 83.249.87.238
+deny from 85.17.92.13
+deny from 85.235.31.248
+deny from 87.118.104.203
+deny from 88.80.28.70
+deny from 88.208.121.151
+deny from 89.253.97.235
+deny from 91.121.170.32
+deny from 94.249.153.47
+deny from 95.143.193.145
+deny from 109.169.29.56
+deny from 109.123.119.163
+deny from 137.56.163.46
+deny from 137.56.163.64
+deny from 173.193.221.28
+deny from 192.251.226.205
+deny from 192.251.226.206
+deny from 199.48.147.35
+deny from 199.48.147.36
+deny from 199.48.147.38
+deny from 199.48.147.40
+deny from 199.48.147.41
+deny from 208.66.135.190
+deny from 209.44.114.178
+deny from 209.159.142.164
+deny from 209.159.143.130
+deny from 213.220.233.230
+deny from 8.18.38.105 
+deny from 62.141.58.13
+deny from 62.163.180.154
+deny from 77.171.107.207
+deny from 78.47.251.152   
+deny from 81.169.155.246
+deny from 82.194.86.135
+deny from 83.163.192.49
+deny from 91.121.152.114 
+deny from 91.213.50.235
+deny from 93.167.245.178 
+deny from 94.23.215.184
+deny from 174.138.169.218
+deny from 64.34.162.160 
+deny from 66.249.9.107   
+deny from 66.96.16.32 
+deny from 78.107.233.68
+deny from 78.107.237.16
+deny from 83.170.92.9   
+deny from 85.214.73.63 
+deny from 91.124.187.225 
+deny from 194.0.229.54
+deny from 195.43.157.85 
+deny from 212.78.238.92 
+deny from 217.114.211.20  
+deny from 62.24.222.132
+deny from 62.24.222.131
+deny from 66.235.133.14/22
+deny from 185.135.157.53
+deny from 5.79.100.165
+deny from 5.196.4.27
+deny from 216.244.66.237
+deny from 88.198.201.22
+deny from 216.244.66.226
+deny from 13.228.225.54
+deny from 54.90.159.21
+deny from 54.252.96.247
+deny from 52.62.52.228
+deny from 34.201.233.220
+deny from 120.26.119.191
+deny from 13.112.163.252
+deny from 23.253.22.201
+deny from 37.235.52.70
+deny from 151.236.20.95
+deny from 52.221.70.217
+deny from 64.34.61.22
+deny from 104.214.147.166
+deny from 45.32.45.117
+deny from 52.52.23.91
+deny from 54.233.129.11
+deny from 131.108.41.181
+deny from 151.236.14.231
+deny from 151.236.15.26
+deny from 151.236.18.167
+deny from 151.236.23.142
+deny from 151.236.24.35
+deny from 185.157.232.52
+deny from 213.183.56.71
+deny from 119.63.193.130
+deny from 188.207.200.116
+deny from 173.192.34.95
+deny from 173.11.97.115
+deny from 54.80.185.137
+deny from 50.18.110.134
+deny from 52.207.41.187
+deny from 64.233.160.0/25
+deny from 64.233.160.128/25
+deny from 64.233.161.0/25
+deny from 64.233.161.128/25
+deny from 64.233.162.0/25
+deny from 64.233.162.128/25
+deny from 64.233.163.0/25
+deny from 64.233.163.128/25
+deny from 64.233.164.0/25
+deny from 64.233.164.128/25
+deny from 64.233.165.0/25
+deny from 64.233.165.128/25
+deny from 64.233.166.0/25
+deny from 64.233.166.128/25
+deny from 64.233.167.0/25
+deny from 64.233.167.128/25
+deny from 64.233.168.0/25
+deny from 64.233.168.128/25
+deny from 64.233.169.0/25
+deny from 64.233.169.128/25
+deny from 64.233.170.0/25
+deny from 64.233.170.128/25
+deny from 64.233.171.0/25
+deny from 64.233.171.128/25
+deny from 64.233.172.0/25
+deny from 64.233.172.128/25
+deny from 64.233.173.0/25
+deny from 64.233.173.128/25
+deny from 64.233.174.0/25
+deny from 64.233.174.128/25
+deny from 64.233.175.0/25
+deny from 64.233.175.128/25
+deny from 64.233.176.0/25
+deny from 64.233.176.128/25
+deny from 64.233.177.0/25
+deny from 64.233.177.128/25
+deny from 64.233.178.0/25
+deny from 64.233.178.128/25
+deny from 64.233.179.0/25
+deny from 64.233.179.128/25
+deny from 64.233.180.0/25
+deny from 64.233.180.128/25
+deny from 64.233.181.0/25
+deny from 64.233.181.128/25
+deny from 64.233.182.0/25
+deny from 64.233.182.128/25
+deny from 64.233.183.0/25
+deny from 64.233.183.128/25
+deny from 64.233.184.0/25
+deny from 64.233.184.128/25
+deny from 64.233.185.0/25
+deny from 64.233.185.128/25
+deny from 64.233.186.0/25
+deny from 64.233.186.128/25
+deny from 64.233.187.0/25
+deny from 64.233.187.128/25
+deny from 64.233.188.0/25
+deny from 64.233.188.128/25
+deny from 64.233.189.0/25
+deny from 64.233.189.128/25
+deny from 64.233.190.0/25
+deny from 64.233.190.128/25
+deny from 64.233.191.0/25
+deny from 64.233.191.128/25	
+deny from 66.102.0.0/25
+deny from 66.102.0.128/25
+deny from 66.102.1.0/25
+deny from 66.102.1.128/25
+deny from 66.102.2.0/25
+deny from 66.102.2.128/25
+deny from 66.102.3.0/25
+deny from 66.102.3.128/25
+deny from 66.102.4.0/25
+deny from 66.102.4.128/25
+deny from 66.102.5.0/25
+deny from 66.102.5.128/25
+deny from 66.102.6.0/25
+deny from 66.102.6.128/25
+deny from 66.102.7.0/25
+deny from 66.102.7.128/25
+deny from 66.102.8.0/25
+deny from 66.102.8.128/25
+deny from 66.102.9.0/25
+deny from 66.102.9.128/25
+deny from 66.102.10.0/25
+deny from 66.102.10.128/25
+deny from 66.102.11.0/25
+deny from 66.102.11.128/25
+deny from 66.102.12.0/25
+deny from 66.102.12.128/25
+deny from 66.102.13.0/25
+deny from 66.102.13.128/25
+deny from 66.102.14.0/25
+deny from 66.102.14.128/25
+deny from 66.102.15.0/25
+deny from 66.102.15.128/25
+deny from 66.249.64.0/25
+deny from 66.249.64.128/25
+deny from 66.249.65.0/25
+deny from 66.249.65.128/25
+deny from 66.249.66.0/25
+deny from 66.249.66.128/25
+deny from 66.249.67.0/25
+deny from 66.249.67.128/25
+deny from 66.249.68.0/25
+deny from 66.249.68.128/25
+deny from 66.249.69.0/25
+deny from 66.249.69.128/25
+deny from 66.249.70.0/25
+deny from 66.249.70.128/25
+deny from 66.249.71.0/25
+deny from 66.249.71.128/25
+deny from 66.249.72.0/25
+deny from 66.249.72.128/25
+deny from 66.249.73.0/25
+deny from 66.249.73.128/25
+deny from 66.249.74.0/25
+deny from 66.249.74.128/25
+deny from 66.249.75.0/25
+deny from 66.249.75.128/25
+deny from 66.249.76.0/25
+deny from 66.249.76.128/25
+deny from 66.249.77.0/25
+deny from 66.249.77.128/25
+deny from 66.249.78.0/25
+deny from 66.249.78.128/25
+deny from 66.249.79.0/25
+deny from 66.249.79.128/25
+deny from 66.249.80.0/25
+deny from 66.249.80.128/25
+deny from 66.249.81.0/25
+deny from 66.249.81.128/25
+deny from 66.249.82.0/25
+deny from 66.249.82.128/25
+deny from 66.249.83.0/25
+deny from 66.249.83.128/25
+deny from 66.249.84.0/25
+deny from 66.249.84.128/25
+deny from 66.249.85.0/25
+deny from 66.249.85.128/25
+deny from 66.249.86.0/25
+deny from 66.249.86.128/25
+deny from 66.249.87.0/25
+deny from 66.249.87.128/25
+deny from 66.249.88.0/25
+deny from 66.249.88.128/25
+deny from 66.249.89.0/25
+deny from 66.249.89.128/25
+deny from 66.249.90.0/25
+deny from 66.249.90.128/25
+deny from 66.249.91.0/25
+deny from 66.249.91.128/25
+deny from 66.249.92.0/25
+deny from 66.249.92.128/25
+deny from 66.249.93.0/25
+deny from 66.249.93.128/25
+deny from 66.249.94.0/25
+deny from 66.249.94.128/25
+deny from 66.249.95.0/25
+deny from 66.249.95.128/25	
+deny from 72.14.192.0/24
+deny from 72.14.193.0/24
+deny from 72.14.194.0/24
+deny from 72.14.195.0/24
+deny from 72.14.196.0/24
+deny from 72.14.197.0/24
+deny from 72.14.198.0/24
+deny from 72.14.199.0/24
+deny from 72.14.200.0/24
+deny from 72.14.201.0/24
+deny from 72.14.202.0/24
+deny from 72.14.203.0/24
+deny from 72.14.204.0/24
+deny from 72.14.205.0/24
+deny from 72.14.206.0/24
+deny from 72.14.207.0/24
+deny from 72.14.208.0/24
+deny from 72.14.209.0/24
+deny from 72.14.210.0/24
+deny from 72.14.211.0/24
+deny from 72.14.212.0/24
+deny from 72.14.213.0/24
+deny from 72.14.214.0/24
+deny from 72.14.215.0/24
+deny from 72.14.216.0/24
+deny from 72.14.217.0/24
+deny from 72.14.218.0/24
+deny from 72.14.219.0/24
+deny from 72.14.220.0/24
+deny from 72.14.221.0/24
+deny from 72.14.222.0/24
+deny from 72.14.223.0/24
+deny from 72.14.224.0/24
+deny from 72.14.225.0/24
+deny from 72.14.226.0/24
+deny from 72.14.227.0/24
+deny from 72.14.228.0/24
+deny from 72.14.229.0/24
+deny from 72.14.230.0/24
+deny from 72.14.231.0/24
+deny from 72.14.232.0/24
+deny from 72.14.233.0/24
+deny from 72.14.234.0/24
+deny from 72.14.235.0/24
+deny from 72.14.236.0/24
+deny from 72.14.237.0/24
+deny from 72.14.238.0/24
+deny from 72.14.239.0/24
+deny from 72.14.240.0/24
+deny from 72.14.241.0/24
+deny from 72.14.242.0/24
+deny from 72.14.243.0/24
+deny from 72.14.244.0/24
+deny from 72.14.245.0/24
+deny from 72.14.246.0/24
+deny from 72.14.247.0/24
+deny from 72.14.248.0/24
+deny from 72.14.249.0/24
+deny from 72.14.250.0/24
+deny from 72.14.251.0/24
+deny from 72.14.252.0/24
+deny from 72.14.253.0/24
+deny from 72.14.254.0/24
+deny from 72.14.255.0/24	
+deny from 74.125.0.0/23
+deny from 74.125.2.0/23
+deny from 74.125.4.0/23
+deny from 74.125.6.0/23
+deny from 74.125.8.0/23
+deny from 74.125.10.0/23
+deny from 74.125.12.0/23
+deny from 74.125.14.0/23
+deny from 74.125.16.0/23
+deny from 74.125.18.0/23
+deny from 74.125.20.0/23
+deny from 74.125.22.0/23
+deny from 74.125.24.0/23
+deny from 74.125.26.0/23
+deny from 74.125.28.0/23
+deny from 74.125.30.0/23
+deny from 74.125.32.0/23
+deny from 74.125.34.0/23
+deny from 74.125.36.0/23
+deny from 74.125.38.0/23
+deny from 74.125.40.0/23
+deny from 74.125.42.0/23
+deny from 74.125.44.0/23
+deny from 74.125.46.0/23
+deny from 74.125.48.0/23
+deny from 74.125.50.0/23
+deny from 74.125.52.0/23
+deny from 74.125.54.0/23
+deny from 74.125.56.0/23
+deny from 74.125.58.0/23
+deny from 74.125.60.0/23
+deny from 74.125.62.0/23
+deny from 74.125.64.0/23
+deny from 74.125.66.0/23
+deny from 74.125.68.0/23
+deny from 74.125.70.0/23
+deny from 74.125.72.0/23
+deny from 74.125.74.0/23
+deny from 74.125.76.0/23
+deny from 74.125.78.0/23
+deny from 74.125.80.0/23
+deny from 74.125.82.0/23
+deny from 74.125.84.0/23
+deny from 74.125.86.0/23
+deny from 74.125.88.0/23
+deny from 74.125.90.0/23
+deny from 74.125.92.0/23
+deny from 74.125.94.0/23
+deny from 74.125.96.0/23
+deny from 74.125.98.0/23
+deny from 74.125.100.0/23
+deny from 74.125.102.0/23
+deny from 74.125.104.0/23
+deny from 74.125.106.0/23
+deny from 74.125.108.0/23
+deny from 74.125.110.0/23
+deny from 74.125.112.0/23
+deny from 74.125.114.0/23
+deny from 74.125.116.0/23
+deny from 74.125.118.0/23
+deny from 74.125.120.0/23
+deny from 74.125.122.0/23
+deny from 74.125.124.0/23
+deny from 74.125.126.0/23
+deny from 74.125.128.0/23
+deny from 74.125.130.0/23
+deny from 74.125.132.0/23
+deny from 74.125.134.0/23
+deny from 74.125.136.0/23
+deny from 74.125.138.0/23
+deny from 74.125.140.0/23
+deny from 74.125.142.0/23
+deny from 74.125.144.0/23
+deny from 74.125.146.0/23
+deny from 74.125.148.0/23
+deny from 74.125.150.0/23
+deny from 74.125.152.0/23
+deny from 74.125.154.0/23
+deny from 74.125.156.0/23
+deny from 74.125.158.0/23
+deny from 74.125.160.0/23
+deny from 74.125.162.0/23
+deny from 74.125.164.0/23
+deny from 74.125.166.0/23
+deny from 74.125.168.0/23
+deny from 74.125.170.0/23
+deny from 74.125.172.0/23
+deny from 74.125.174.0/23
+deny from 74.125.176.0/23
+deny from 74.125.178.0/23
+deny from 74.125.180.0/23
+deny from 74.125.182.0/23
+deny from 74.125.184.0/23
+deny from 74.125.186.0/23
+deny from 74.125.188.0/23
+deny from 74.125.190.0/23
+deny from 74.125.192.0/23
+deny from 74.125.194.0/23
+deny from 74.125.196.0/23
+deny from 74.125.198.0/23
+deny from 74.125.200.0/23
+deny from 74.125.202.0/23
+deny from 74.125.204.0/23
+deny from 74.125.206.0/23
+deny from 74.125.208.0/23
+deny from 74.125.210.0/23
+deny from 74.125.212.0/23
+deny from 74.125.214.0/23
+deny from 74.125.216.0/23
+deny from 74.125.218.0/23
+deny from 74.125.220.0/23
+deny from 74.125.222.0/23
+deny from 74.125.224.0/23
+deny from 74.125.226.0/23
+deny from 74.125.228.0/23
+deny from 74.125.230.0/23
+deny from 74.125.232.0/23
+deny from 74.125.234.0/23
+deny from 74.125.236.0/23
+deny from 74.125.238.0/23
+deny from 74.125.240.0/23
+deny from 74.125.242.0/23
+deny from 74.125.244.0/23
+deny from 74.125.246.0/23
+deny from 74.125.248.0/23
+deny from 74.125.250.0/23
+deny from 74.125.252.0/23
+deny from 74.125.254.0/23	
+deny from 209.85.128.0/24
+deny from 209.85.129.0/24
+deny from 209.85.130.0/24
+deny from 209.85.131.0/24
+deny from 209.85.132.0/24
+deny from 209.85.133.0/24
+deny from 209.85.134.0/24
+deny from 209.85.135.0/24
+deny from 209.85.136.0/24
+deny from 209.85.137.0/24
+deny from 209.85.138.0/24
+deny from 209.85.139.0/24
+deny from 209.85.140.0/24
+deny from 209.85.141.0/24
+deny from 209.85.142.0/24
+deny from 209.85.143.0/24
+deny from 209.85.144.0/24
+deny from 209.85.145.0/24
+deny from 209.85.146.0/24
+deny from 209.85.147.0/24
+deny from 209.85.148.0/24
+deny from 209.85.149.0/24
+deny from 209.85.150.0/24
+deny from 209.85.151.0/24
+deny from 209.85.152.0/24
+deny from 209.85.153.0/24
+deny from 209.85.154.0/24
+deny from 209.85.155.0/24
+deny from 209.85.156.0/24
+deny from 209.85.157.0/24
+deny from 209.85.158.0/24
+deny from 209.85.159.0/24
+deny from 209.85.160.0/24
+deny from 209.85.161.0/24
+deny from 209.85.162.0/24
+deny from 209.85.163.0/24
+deny from 209.85.164.0/24
+deny from 209.85.165.0/24
+deny from 209.85.166.0/24
+deny from 209.85.167.0/24
+deny from 209.85.168.0/24
+deny from 209.85.169.0/24
+deny from 209.85.170.0/24
+deny from 209.85.171.0/24
+deny from 209.85.172.0/24
+deny from 209.85.173.0/24
+deny from 209.85.174.0/24
+deny from 209.85.175.0/24
+deny from 209.85.176.0/24
+deny from 209.85.177.0/24
+deny from 209.85.178.0/24
+deny from 209.85.179.0/24
+deny from 209.85.180.0/24
+deny from 209.85.181.0/24
+deny from 209.85.182.0/24
+deny from 209.85.183.0/24
+deny from 209.85.184.0/24
+deny from 209.85.185.0/24
+deny from 209.85.186.0/24
+deny from 209.85.187.0/24
+deny from 209.85.188.0/24
+deny from 209.85.189.0/24
+deny from 209.85.190.0/24
+deny from 209.85.191.0/24
+deny from 209.85.192.0/24
+deny from 209.85.193.0/24
+deny from 209.85.194.0/24
+deny from 209.85.195.0/24
+deny from 209.85.196.0/24
+deny from 209.85.197.0/24
+deny from 209.85.198.0/24
+deny from 209.85.199.0/24
+deny from 209.85.200.0/24
+deny from 209.85.201.0/24
+deny from 209.85.202.0/24
+deny from 209.85.203.0/24
+deny from 209.85.204.0/24
+deny from 209.85.205.0/24
+deny from 209.85.206.0/24
+deny from 209.85.207.0/24
+deny from 209.85.208.0/24
+deny from 209.85.209.0/24
+deny from 209.85.210.0/24
+deny from 209.85.211.0/24
+deny from 209.85.212.0/24
+deny from 209.85.213.0/24
+deny from 209.85.214.0/24
+deny from 209.85.215.0/24
+deny from 209.85.216.0/24
+deny from 209.85.217.0/24
+deny from 209.85.218.0/24
+deny from 209.85.219.0/24
+deny from 209.85.220.0/24
+deny from 209.85.221.0/24
+deny from 209.85.222.0/24
+deny from 209.85.223.0/24
+deny from 209.85.224.0/24
+deny from 209.85.225.0/24
+deny from 209.85.226.0/24
+deny from 209.85.227.0/24
+deny from 209.85.228.0/24
+deny from 209.85.229.0/24
+deny from 209.85.230.0/24
+deny from 209.85.231.0/24
+deny from 209.85.232.0/24
+deny from 209.85.233.0/24
+deny from 209.85.234.0/24
+deny from 209.85.235.0/24
+deny from 209.85.236.0/24
+deny from 209.85.237.0/24
+deny from 209.85.238.0/24
+deny from 209.85.239.0/24
+deny from 209.85.240.0/24
+deny from 209.85.241.0/24
+deny from 209.85.242.0/24
+deny from 209.85.243.0/24
+deny from 209.85.244.0/24
+deny from 209.85.245.0/24
+deny from 209.85.246.0/24
+deny from 209.85.247.0/24
+deny from 209.85.248.0/24
+deny from 209.85.249.0/24
+deny from 209.85.250.0/24
+deny from 209.85.251.0/24
+deny from 209.85.252.0/24
+deny from 209.85.253.0/24
+deny from 209.85.254.0/24
+deny from 209.85.255.0/24	
+deny from 216.239.32.0/25
+deny from 216.239.32.128/25
+deny from 216.239.33.0/25
+deny from 216.239.33.128/25
+deny from 216.239.34.0/25
+deny from 216.239.34.128/25
+deny from 216.239.35.0/25
+deny from 216.239.35.128/25
+deny from 216.239.36.0/25
+deny from 216.239.36.128/25
+deny from 216.239.37.0/25
+deny from 216.239.37.128/25
+deny from 216.239.38.0/25
+deny from 216.239.38.128/25
+deny from 216.239.39.0/25
+deny from 216.239.39.128/25
+deny from 216.239.40.0/25
+deny from 216.239.40.128/25
+deny from 216.239.41.0/25
+deny from 216.239.41.128/25
+deny from 216.239.42.0/25
+deny from 216.239.42.128/25
+deny from 216.239.43.0/25
+deny from 216.239.43.128/25
+deny from 216.239.44.0/25
+deny from 216.239.44.128/25
+deny from 216.239.45.0/25
+deny from 216.239.45.128/25
+deny from 216.239.46.0/25
+deny from 216.239.46.128/25
+deny from 216.239.47.0/25
+deny from 216.239.47.128/25
+deny from 87.124.128.0/18
+deny from 216.239.48.0/25
+deny from 216.239.48.128/25
+deny from 216.239.49.0/25
+deny from 216.239.49.128/25
+deny from 216.239.50.0/25
+deny from 216.239.50.128/25
+deny from 216.239.51.0/25
+deny from 216.239.51.128/25
+deny from 216.239.52.0/25
+deny from 216.239.52.128/25
+deny from 216.239.53.0/25
+deny from 216.239.53.128/25
+deny from 216.239.54.0/25
+deny from 216.239.54.128/25
+deny from 216.239.55.0/25
+deny from 216.239.55.128/25
+deny from 216.239.56.0/25
+deny from 216.239.56.128/25
+deny from 216.239.57.0/25
+deny from 216.239.57.128/25
+deny from 216.239.58.0/25
+deny from 216.239.58.128/25
+deny from 216.239.59.0/25
+deny from 216.239.59.128/25
+deny from 216.239.60.0/25
+deny from 216.239.60.128/25
+deny from 216.239.61.0/25
+deny from 216.239.61.128/25
+deny from 216.239.62.0/25
+deny from 216.239.62.128/25
+deny from 216.239.63.0/25
+deny from 216.239.63.128/25
+deny from google.com
+deny from paypal.com
+deny from firefox.com
+deny from apple.com
+deny from env=stealthed
+Deny from env=bots
+deny from static.masmovil.com
+deny from 139.47.11.179
+deny from 212.81.199.0/24
+
+#Header set Access-Control-Allow-Origin "*"
+        BrowserMatchNoCase "Baiduspider" bots
+        BrowserMatchNoCase "HTTrack" bots
+        BrowserMatchNoCase "Yandex"  bots
+        BrowserMatchNoCase "AhrefsBot" bots
+        BrowserMatchNoCase "exabot"  bots
+        BrowserMatchNoCase "MJ12bot" bots
+        BrowserMatchNoCase "dotbot"  bots
+        BrowserMatchNoCase "gigabot" bots
+        BrowserMatchNoCase "Visbot" bots
+        BrowserMatchNoCase "SemrushBot" bots
+        BrowserMatchNoCase "SpammerRobot" bots
+        BrowserMatchNoCase "SecurityHoleRobot" bots
+allow from all

@@ -1,0 +1,1 @@
+[07-Dec-2018 11:59:16 America/Chicago] PHP Fatal error:  Class 'WP_Customize_Image_Control' not found in /home/lugar308/public_html/cariru.movfit.com.br/wp-includes/customize/class-wp-customize-header-image-control.php on line 17

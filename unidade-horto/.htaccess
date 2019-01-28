@@ -1,0 +1,19 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+## start pwrestrict.pl
+ErrorDocument 401 'Access Denied!'
+AuthUserFile "/home/lugar308/.htpasswds/public_html/horto.movfit.com.br/.hgpwrestrict"
+AuthName "Access Restricted (pwrestrict)"
+AuthType Basic
+require user lugar308
+## end pwrestrict.pl
